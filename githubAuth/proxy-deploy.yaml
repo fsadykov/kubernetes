@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: github-proxy
+  name: github-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-proxy
+  template:
+    metadata:
+      labels:
+        app: github-proxy
+    spec:
+      containers:
+      - args:
+        - --cookie-secure=false
+        - --provider=github
+        - --upstream=http://isitup.default.svc.cluster.local
+        - --http-address=0.0.0.0:8080
+        - --redirect-url=https://github.isitup.fuchicorp.com/oauth2/callback
+        - --email-domain=*
+        - --github-org=fuchicorp
+        - --pass-basic-auth=false
+        - --pass-access-token=false
+
+        env:
+        - name: OAUTH2_PROXY_COOKIE_SECRET
+          value: 8z86f1RMH6JzQ7U
+
+        - name: OAUTH2_PROXY_CLIENT_ID
+          value: 
+
+        - name: OAUTH2_PROXY_CLIENT_SECRET
+          value: 
+
+        image: a5huynh/oauth2_proxy:2.1
+        # image: bitnami/oauth2-proxy
+        name: oauth-proxy
+        ports:
+        - containerPort: 8080
+          protocol: TCP

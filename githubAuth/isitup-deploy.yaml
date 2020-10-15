@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: isitup
+  name: isitup
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: isitup
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: isitup
+    spec:
+      containers:
+      - image: fsadykov/isitup
+        name: isitup
