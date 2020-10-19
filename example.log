@@ -1,0 +1,4 @@
+2020/10/19 01:59:05 oauthproxy.go:527: 10.104.2.34:58532 ("24.12.115.204") error redeeming code no access token found error=bad_verification_code&error_description=The+code+passed+is+incorrect+or+expired.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-oauth-app-access-token-request-errors%2F%23bad-verification-code
+2020/10/19 01:59:05 oauthproxy.go:349: ErrorPage 500 Internal Error Internal Error
+2020/10/19 01:59:05 oauthproxy.go:602: 10.104.2.34:58532 ("24.12.115.204") Cookie "_oauth2_proxy" not present
+192.168.2.121 - - [19/Oct/2020:01:59:05 +0000] github.fuchicorp.com GET - "/favicon.ico" HTTP/1.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.80 Safari/537.36" 403 2489 0.000

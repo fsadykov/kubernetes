@@ -1,0 +1,20 @@
+{{- if .Values.networkPolicy -}}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ template "isitup-dashboard.fullname" . }}
+  labels:
+    app: {{ template "isitup-dashboard.name" . }}
+    chart: {{ template "isitup-dashboard.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  podSelector:
+    matchLabels:
+      app: {{ template "isitup-dashboard.name" . }}
+      release: {{ .Release.Name }}
+  ingress:
+  - ports:
+    - port: 9090
+      protocol: TCP
+{{- end -}}

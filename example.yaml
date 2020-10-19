@@ -1,0 +1,2 @@
+data:
+- --upstream=http://dashboard-tools-kube-system-kubernetes-dashboard.kube-system.svc.cluster.local
